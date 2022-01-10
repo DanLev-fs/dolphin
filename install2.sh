@@ -16,6 +16,7 @@ Path=
 Terminal=false
 StartupNotify=false
 EOF
+)"
 
 echo -n "Installing Dolphin {anty}... "
 wget "https://github.com/dolphinrucom/anty-releases/releases/download/v2022.7.10/dolphin-anty-linux-x86_64-latest.AppImage" -O /opt/dolphin &> /dev/null
