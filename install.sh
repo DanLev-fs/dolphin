@@ -67,7 +67,10 @@ wget "https://github.com/dolphinrucom/anty-releases/releases/download/v2022.7.10
 chmod +x /opt/dolphin
 mkdir -p /root/Desktop/
 echo "$desktop" > /root/Desktop/dolphin.desktop
+chmod +x /root/Desktop/dolphin.desktop
 echo "${GREEN}Done${NC}"
 
 read -r -p "Reboot? [y/N] " rsp
-if [[ "$rsp" =~ ^([yY][eE][sS]|[yY])$ ]]; then reboot; fi
+if [[ "$rsp" =~ ^([yY][eE][sS]|[yY])$ ]]; 
+	then reboot; 	
+fi
