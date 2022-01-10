@@ -26,7 +26,4 @@ echo "$desktopIconvar" > /root/Desktop/dolphin.desktop
 echo "${GREEN}Done${NC}"
 
 read -r -p "Reboot? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]];
-then
-    reboot;
-fi
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then reboot; fi
