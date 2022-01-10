@@ -69,8 +69,5 @@ mkdir -p /root/Desktop/
 echo "$desktop" > /root/Desktop/dolphin.desktop
 echo "${GREEN}Done${NC}"
 
-read -r -p "Reboot? [y/N] " response
-if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]
-then
-    reboot
-fi
+read -r -p "Reboot? [y/N] " rsp
+if [[ "$rsp" =~ ^([yY][eE][sS]|[yY])$ ]]; then reboot; fi
