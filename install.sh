@@ -58,6 +58,7 @@ echo "${GREEN}Done${NC}"
 echo -n "Configuring... "
 echo xfce4-session >~/.xsession &> /dev/null
 echo "$xfce4settings" > /etc/xrdp/startwm.sh
+ufw allow 3389 &> /dev/null
 echo "${GREEN}Done${NC}"
 
 systemctl enable xrdp &> /dev/null
@@ -69,8 +70,3 @@ mkdir -p /root/Desktop/
 echo "$desktop" > /root/Desktop/dolphin.desktop
 chmod +x /root/Desktop/dolphin.desktop
 echo "${GREEN}Done${NC}"
-
-read -r -p "Reboot? [y/N] " rsp
-if [[ "$rsp" =~ ^([yY][eE][sS]|[yY])$ ]]; 
-	then reboot; 	
-fi
