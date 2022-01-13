@@ -57,6 +57,7 @@ echo "${GREEN}Done${NC}"
 
 echo -n "Configuring... "
 echo xfce4-session >~/.xsession &> /dev/null
+mkdir -p /etc/xrdp/ &> /dev/null
 echo "$xfce4settings" > /etc/xrdp/startwm.sh
 ufw allow 3389 &> /dev/null
 echo "${GREEN}Done${NC}"
