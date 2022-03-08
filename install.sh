@@ -65,9 +65,12 @@ echo "${GREEN}Done${NC}"
 systemctl enable xrdp &> /dev/null
 
 echo -n "Installing Dolphin {anty}... "
-wget "https://github.com/dolphinrucom/anty-releases/releases/latest/download/dolphin-anty-linux-x86_64-latest.AppImage" -O /opt/dolphin &> /dev/null
+wget "https://github.com/dolphinrucom/anty-releases/releases/latest/download/dolphin-anty-linux-x86_64-latest.AppImage" -O /opt/dolphin -q --show-progress
 chmod +x /opt/dolphin
-mkdir -p /root/Desktop/
-echo "$desktop" > /root/Desktop/dolphin.desktop
-chmod +x /root/Desktop/dolphin.desktop
+for user in /home/*;
+	do [ -d "$user" ] &&
+	mkdir -p $user/Desktop/ &&
+	echo "$desktop" > $user/Desktop/dolphin.desktop &&
+	chmod +x $user/Desktop/dolphin.desktop;
+done
 echo "${GREEN}Done${NC}"
